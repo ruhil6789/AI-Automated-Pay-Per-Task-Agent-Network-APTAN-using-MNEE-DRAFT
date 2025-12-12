@@ -75,9 +75,19 @@ function CreateTask() {
           const productionContractAddress = "0x1be0f1d26748c6c879b988e3516a284c7ea1380a";
           const isTestContract = normalizedContractAddress === testContractAddress;
           const isProductionContract = normalizedContractAddress === productionContractAddress;
-          const expected = isTestContract ? 'Sepolia' : (isProductionContract ? 'Mainnet' : 'Unknown');
-          setExpectedNetwork(expected);
-          setNetworkMatch(network === expected);
+          
+          // Only set expected network if contract is known, otherwise don't show network requirement
+          if (isTestContract) {
+            setExpectedNetwork('Sepolia');
+            setNetworkMatch(network === 'Sepolia');
+          } else if (isProductionContract) {
+            setExpectedNetwork('Mainnet');
+            setNetworkMatch(network === 'Mainnet');
+          } else {
+            // Unknown contract - don't set expected network, so no warning will show
+            setExpectedNetwork(null);
+            setNetworkMatch(true); // Treat as match so no warning shows
+          }
         } catch (error) {
           console.error('Error checking network:', error);
         }
@@ -579,7 +589,7 @@ function CreateTask() {
           <p className="subtitle">Post a task and set a reward in MNEE. The AI agent will automatically solve it!</p>
 
           {/* Network Status Indicator - Only show if network is known and doesn't match */}
-          {currentNetwork && expectedNetwork && expectedNetwork !== 'Unknown' && !networkMatch && (
+          {currentNetwork && expectedNetwork && !networkMatch && (
             <div className={`network-status network-mismatch`}>
               <div className="network-info">
                 <span className="network-label">Current Network:</span>
