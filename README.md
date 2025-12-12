@@ -319,10 +319,10 @@ Built for hackathon submission demonstrating:
 
 ## 🔗 Links
 
-- **Demo Video**: [Link to video]
-- **Live Demo**: [Link to deployed app]
-- **Smart Contract**: [Contract address on explorer]
-- **GitHub**: [Repository URL]
+- **Demo Video**: [[Link to video]](https://aptan-using-mnee-3nk4h2jiz-ruhils-projects-fb539736.vercel.app/)
+- **Live Demo**: [[Link to deployed app]](https://aptan-using-mnee-3nk4h2jiz-ruhils-projects-fb539736.vercel.app/)
+- **Smart Contract**: [[Contract address on explorer]](https://sepolia.etherscan.io/address/0x34f0f88b1e637640f1fb0b01dbdfd02f7a8b7b92)
+- **GitHub**: [[Repository URL]](https://github.com/ruhil6789/AI-Automated-Pay-Per-Task-Agent-Network-APTAN-using-MNEE-DRAFT/tree/master)
 
 ## 🙏 Acknowledgments
 
