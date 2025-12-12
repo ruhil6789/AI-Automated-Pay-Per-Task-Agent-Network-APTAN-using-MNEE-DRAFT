@@ -1,0 +1,99 @@
+APTAN/
+│
+├── 📄 README.md                    # Main project documentation
+├── 📄 QUICKSTART.md                # 5-minute setup guide
+├── 📄 DEPLOYMENT.md                # Deployment instructions
+├── 📄 ARCHITECTURE.md              # System architecture
+├── 📄 DEVPOST.md                   # DevPost submission template
+├── 📄 PROJECT_SUMMARY.md           # Project overview
+├── 📄 CONTRIBUTING.md              # Contribution guidelines
+├── 📄 .gitignore                   # Git ignore rules
+├── 📄 package.json                 # Root package.json
+├── 🔧 setup-env.sh                 # Environment setup script
+│
+├── 📁 contracts/                   # Smart Contracts
+│   ├── 📄 package.json
+│   ├── 📄 package-lock.json        # ⚠️ Gitignored
+│   ├── 📄 hardhat.config.js
+│   ├── 📄 .env                     # ⚠️ Gitignored (contains PRIVATE_KEY, API keys)
+│   ├── 📄 .env.example            # Environment template
+│   ├── 📄 deployed-addresses.json # ⚠️ Gitignored
+│   ├── 📄 deployed-addresses-production.json # ⚠️ Gitignored
+│   ├── 📁 node_modules/            # ⚠️ Gitignored (dependencies)
+│   ├── 📁 contracts/
+│   │   ├── 📄 APTAN.sol           # Main escrow contract
+│   │   └── 📄 MockMNEE.sol        # Mock ERC20 token
+│   ├── 📁 scripts/
+│   │   ├── 📄 deploy.js           # Deployment script
+│   │   ├── 📄 deploy-production.js # Production deployment
+│   │   ├── 📄 deploy-mock-mnee-sepolia.js
+│   │   ├── 📄 mint-tokens.js      # Token minting helper
+│   │   ├── 📄 verify-contract.js  # Contract verification
+│   │   ├── 📄 test-transaction.js # Transaction testing
+│   │   ├── 📄 test-all-functions.js
+│   │   ├── 📄 test-read-functions.js
+│   │   └── 📄 test-create-task.js
+│   ├── 📁 test/
+│   │   └── 📄 APTAN.test.js       # Contract tests
+│   ├── 📁 artifacts/               # ⚠️ Gitignored (compiled contracts)
+│   ├── 📁 cache/                   # ⚠️ Gitignored (Hardhat cache)
+│   └── 📁 typechain-types/         # ⚠️ Gitignored (TypeScript types)
+│
+├── 📁 backend/                     # Node.js Backend
+│   ├── 📄 package.json
+│   ├── 📄 package-lock.json        # ⚠️ Gitignored
+│   ├── 📄 server.js               # Express server + AI agent
+│   ├── 📄 .env                     # ⚠️ Gitignored (contains API keys, private keys)
+│   ├── 📄 .env.example            # Environment template
+│   ├── 📁 node_modules/            # ⚠️ Gitignored (dependencies)
+│   └── 📄 aptan.db                 # ⚠️ Gitignored (SQLite database)
+│
+└── 📁 frontend/                    # React Frontend
+    ├── 📄 package.json
+    ├── 📄 package-lock.json        # ⚠️ Gitignored
+    ├── 📄 .env                     # ⚠️ Gitignored (contains contract address)
+    ├── 📄 .env.example            # Environment template
+    ├── 📁 node_modules/            # ⚠️ Gitignored (dependencies)
+    ├── 📁 public/
+    │   └── 📄 index.html
+    ├── 📁 src/
+    │   ├── 📄 index.js            # React entry point
+    │   ├── 📄 index.css            # Global styles
+    │   ├── 📄 App.js              # Main app component
+    │   ├── 📄 App.css             # App styles
+    │   ├── 📁 components/
+    │   │   ├── 📄 Navbar.js       # Navigation component
+    │   │   └── 📄 Navbar.css
+    │   └── 📁 pages/
+    │       ├── 📄 Home.js         # Home page
+    │       ├── 📄 Home.css
+    │       ├── 📄 CreateTask.js   # Task creation
+    │       ├── 📄 CreateTask.css
+    │       ├── 📄 Tasks.js        # Task listing
+    │       ├── 📄 Tasks.css
+    │       ├── 📄 TaskDetail.js   # Task details
+    │       └── 📄 TaskDetail.css
+    └── 📁 build/                   # ⚠️ Gitignored (production build)
+
+Hidden Files & Directories (⚠️ Gitignored):
+├── .git/                           # Git repository data
+├── .gitignore                      # Git ignore rules (committed)
+├── .env                            # Environment variables (all locations)
+├── .env.local                      # Local environment overrides
+├── .DS_Store                       # macOS system file
+├── node_modules/                   # Dependencies (all locations)
+├── package-lock.json               # Lock files (all locations)
+├── *.log                           # Log files
+├── cache/                          # Build caches
+├── artifacts/                      # Compiled contracts
+├── *.db                            # Database files
+└── .vscode/                        # VS Code settings (optional)
+
+Key Files:
+- Smart Contracts: Solidity 0.8.20, Hardhat framework
+- Backend: Node.js/Express, SQLite, OpenAI integration
+- Frontend: React 18, Ethers.js, MetaMask integration
+- Documentation: Comprehensive guides for setup and deployment
+
+⚠️ Important: Files marked with ⚠️ are gitignored and should NOT be committed to git.
+Always use .env.example files as templates for environment configuration.

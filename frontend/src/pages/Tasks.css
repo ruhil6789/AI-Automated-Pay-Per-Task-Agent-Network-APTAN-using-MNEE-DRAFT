@@ -1,0 +1,46 @@
+.tasks {
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+}
+
+.tasks h1 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.task-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.task-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.task-description {
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.task-agent {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #666;
+}
+

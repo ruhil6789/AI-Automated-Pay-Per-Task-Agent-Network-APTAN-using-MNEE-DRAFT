@@ -1,0 +1,29 @@
+{
+  "name": "aptan",
+  "version": "1.0.0",
+  "description": "AI-Automated Pay-Per-Task Agent Network using MNEE stablecoin",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "compile": "cd contracts && npx hardhat compile",
+    "test": "cd contracts && npx hardhat test",
+    "deploy:local": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../contracts && npm install"
+  },
+  "keywords": [
+    "blockchain",
+    "ai",
+    "smart-contracts",
+    "ethereum",
+    "mnee",
+    "decentralized"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
