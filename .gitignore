@@ -7,3 +7,9 @@ node_modules
 backend/.env
 frontend/.env
 contracts/.env
+
+# Build outputs
+frontend/build
+frontend/dist
+.vercel
+*.log

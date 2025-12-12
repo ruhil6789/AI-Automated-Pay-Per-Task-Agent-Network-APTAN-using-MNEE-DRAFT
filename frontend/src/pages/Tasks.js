@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ethers } from 'ethers';
+import { API_URL } from '../config';
 import './Tasks.css';
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS || "";
@@ -24,7 +25,7 @@ function Tasks() {
     try {
       // Try to load from backend first
       try {
-        const response = await axios.get('http://localhost:3001/api/tasks');
+        const response = await axios.get(`${API_URL}/api/tasks`);
         // If backend responds successfully (even with empty array), use it
         setTasks(response.data || []);
         setLoading(false);

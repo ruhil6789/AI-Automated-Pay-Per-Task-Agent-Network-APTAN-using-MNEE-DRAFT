@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { ethers } from 'ethers';
 import { io } from 'socket.io-client';
+import { API_URL } from '../config';
 import './TaskDetail.css';
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS || "";
@@ -27,7 +28,7 @@ function TaskDetail() {
     loadTask();
     
     // Initialize WebSocket connection for real-time updates
-    const socket = io('http://localhost:3001', {
+    const socket = io(API_URL, {
       transports: ['websocket', 'polling'],
       reconnection: true,
       reconnectionDelay: 1000,
@@ -106,7 +107,7 @@ function TaskDetail() {
     
     // Fallback: Also set up Server-Sent Events (SSE) as alternative
     try {
-      const eventSource = new EventSource(`http://localhost:3001/api/tasks/${id}/events`);
+      const eventSource = new EventSource(`${API_URL}/api/tasks/${id}/events`);
       
       eventSource.onmessage = (event) => {
         const data = JSON.parse(event.data);
@@ -174,7 +175,7 @@ function TaskDetail() {
     try {
       // Try backend first
       try {
-        const response = await axios.get(`http://localhost:3001/api/tasks/${id}`);
+        const response = await axios.get(`${API_URL}/api/tasks/${id}`);
         if (response.data) {
           setTask(response.data);
           setLoading(false);
@@ -264,7 +265,7 @@ function TaskDetail() {
     setIsRetrying(true);
     setError('');
     try {
-      const response = await axios.post(`http://localhost:3001/api/tasks/${id}/retry`);
+      const response = await axios.post(`${API_URL}/api/tasks/${id}/retry`);
       if (response.data.success) {
         setSuccess('Task retry successful! Refreshing...');
         setTimeout(() => {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 import axios from 'axios';
+import { API_URL } from '../config';
 import './CreateTask.css';
 
 // ============================================
@@ -518,7 +519,7 @@ function CreateTask() {
       
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
-          const response = await axios.post('http://localhost:3001/api/tasks', {
+          const response = await axios.post(`${API_URL}/api/tasks`, {
             taskId,
             creator: creatorAddress,
             description: formData.description,
