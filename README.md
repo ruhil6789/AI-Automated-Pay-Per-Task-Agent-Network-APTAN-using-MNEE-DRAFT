@@ -319,8 +319,8 @@ Built for hackathon submission demonstrating:
 
 ## 🔗 Links
 
-- **Demo Video**: [Link to video]
-- **Live Demo**: [Link to deployed app]
+- **Demo Video**: [[Link to video]](https://aptan-using-mnee-3nk4h2jiz-ruhils-projects-fb539736.vercel.app/)
+- **Live Demo**: [[Link to deployed app]](https://aptan-using-mnee-3nk4h2jiz-ruhils-projects-fb539736.vercel.app/)
 - **Smart Contract**: [Contract address on explorer]
 - **GitHub**: [Repository URL]
 
