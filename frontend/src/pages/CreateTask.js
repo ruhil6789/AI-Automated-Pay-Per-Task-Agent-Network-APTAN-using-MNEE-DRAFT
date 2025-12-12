@@ -578,27 +578,19 @@ function CreateTask() {
           <h1>Create New Task</h1>
           <p className="subtitle">Post a task and set a reward in MNEE. The AI agent will automatically solve it!</p>
 
-          {/* Network Status Indicator */}
-          {currentNetwork && expectedNetwork && (
-            <div className={`network-status ${networkMatch ? 'network-match' : 'network-mismatch'}`}>
+          {/* Network Status Indicator - Only show if network is known and doesn't match */}
+          {currentNetwork && expectedNetwork && expectedNetwork !== 'Unknown' && !networkMatch && (
+            <div className={`network-status network-mismatch`}>
               <div className="network-info">
                 <span className="network-label">Current Network:</span>
                 <span className="network-value">{currentNetwork}</span>
-                {networkMatch ? (
-                  <span className="network-check">✓</span>
-                ) : (
-                  <>
-                    <span className="network-separator">→</span>
-                    <span className="network-label">Required:</span>
-                    <span className="network-value">{expectedNetwork}</span>
-                  </>
-                )}
+                <span className="network-separator">→</span>
+                <span className="network-label">Required:</span>
+                <span className="network-value">{expectedNetwork}</span>
               </div>
-              {!networkMatch && (
-                <div className="network-warning">
-                  Please switch to {expectedNetwork} using the network selector in the navbar.
-                </div>
-              )}
+              <div className="network-warning">
+                Please switch to {expectedNetwork} using the network selector in the navbar.
+              </div>
             </div>
           )}
 
